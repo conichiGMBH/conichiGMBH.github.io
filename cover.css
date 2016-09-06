@@ -61,6 +61,11 @@ body {
     color: #666;
 }
 
+.content .child {
+    color: #666;
+    font-size: 24px;
+}
+
 .content .col-md-4 .well {
     min-height: 175px;
     background-color: #FDFDFD;
