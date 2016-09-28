@@ -1,0 +1,50 @@
+require 'fileutils'
+
+fastlane_version "1.104.0"
+
+platform :ios do
+  ## PUBLIC ##
+
+  lane :update_documentations do
+    ensure_git_status_clean
+    ensure_git_branch( branch: ENV['GITHUB_MASTER_BRANCH'] )
+
+    sh("git clone '#{ENV['CONICHI_IOS_SDK_REPO_URL']}' '#{ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER']}'")
+    [[ENV['CONICHI_IOS_SDK_CORE_KIT_DOCUMENTATION_PATH'], ENV['CONICHI_IOS_SDK_CORE_KIT_DOCUMENTATION_DESTINATION_PATH']],
+     [ENV['CONICHI_IOS_SDK_PAYMENT_KIT_DOCUMENTATION_PATH'], ENV['CONICHI_IOS_SDK_PAYMENT_KIT_DOCUMENTATION_DESTINATION_PATH']],
+     [ENV['CONICHI_IOS_SDK_PMS_KIT_DOCUMENTATION_PATH'], ENV['CONICHI_IOS_SDK_PMS_KIT_DOCUMENTATION_DESTINATION_PATH']],
+     [ENV['CONICHI_IOS_SDK_GEOFENCING_KIT_DOCUMENTATION_PATH'], ENV['CONICHI_IOS_SDK_GEOFENCING_KIT_DOCUMENTATION_DESTINATION_PATH']]
+    ].each do |options|
+      copy_documentation(
+        sdk_path: ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER'],
+        documentation_path: options[0],
+        destination_path: options[1]
+      )
+    end
+    FileUtils.rm_rf(ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER'])
+
+    git_commit_shell(
+      message: "Conichi iOS documentation update"
+    )
+
+    push_to_git_remote(
+      remote: ENV['GITHUB_REMOTE'],
+      local_branch: ENV['GITHUB_MASTER_BRANCH'],
+      remote_branch: ENV['GITHUB_MASTER_BRANCH']
+    )
+  end
+
+  ## PRIVATE ##
+
+  private_lane :copy_documentation do |options|
+    sdk_path = options[:sdk_path]
+    documentation_path = options[:documentation_path]
+    destination_path = options[:destination_path]
+    FileUtils.copy_entry("#{sdk_path}/#{documentation_path}", destination_path)
+  end
+
+  private_lane :git_commit_shell do |options|
+    message = options[:message]
+    sh("git commit -am '#{message}'")
+  end
+end
