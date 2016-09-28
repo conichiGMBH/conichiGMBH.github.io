@@ -21,6 +21,9 @@ platform :ios do
         destination_path: options[1]
       )
     end
+    git_add(
+      path: "ios/"
+    )
     FileUtils.rm_rf(ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER'])
 
     return if git_status_clean?
@@ -43,9 +46,6 @@ platform :ios do
     documentation_path = options[:documentation_path]
     destination_path = options[:destination_path]
     FileUtils.copy_entry("#{sdk_path}/#{documentation_path}", destination_path)
-    git_add(
-      path: destination_path
-    )
   end
 
   private_lane :git_commit_shell do |options|
