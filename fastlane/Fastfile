@@ -23,6 +23,8 @@ platform :ios do
     end
     FileUtils.rm_rf(ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER'])
 
+    return if git_status_clean?
+
     git_commit_shell(
       message: "Conichi iOS documentation update"
     )
@@ -46,5 +48,9 @@ platform :ios do
   private_lane :git_commit_shell do |options|
     message = options[:message]
     sh("git commit -am '#{message}'")
+  end
+
+  private_lane :git_status_clean? do |options|
+    sh("git status --porcelain").empty?
   end
 end
