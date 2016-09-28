@@ -26,7 +26,7 @@ platform :ios do
     )
     FileUtils.rm_rf(ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER'])
 
-    unless git_status_clean? do
+    unless git_status_clean?
       git_commit_shell(
         message: "Conichi iOS documentation update"
       )
