@@ -26,17 +26,17 @@ platform :ios do
     )
     FileUtils.rm_rf(ENV['CONICHI_IOS_SDK_TEMPORARY_FOLDER'])
 
-    return if git_status_clean?
+    unless git_status_clean? do
+      git_commit_shell(
+        message: "Conichi iOS documentation update"
+      )
 
-    git_commit_shell(
-      message: "Conichi iOS documentation update"
-    )
-
-    push_to_git_remote(
-      remote: ENV['GITHUB_REMOTE'],
-      local_branch: ENV['GITHUB_MASTER_BRANCH'],
-      remote_branch: ENV['GITHUB_MASTER_BRANCH']
-    )
+      push_to_git_remote(
+        remote: ENV['GITHUB_REMOTE'],
+        local_branch: ENV['GITHUB_MASTER_BRANCH'],
+        remote_branch: ENV['GITHUB_MASTER_BRANCH']
+      )
+    end
   end
 
   ## PRIVATE ##
