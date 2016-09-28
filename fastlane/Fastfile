@@ -43,6 +43,9 @@ platform :ios do
     documentation_path = options[:documentation_path]
     destination_path = options[:destination_path]
     FileUtils.copy_entry("#{sdk_path}/#{documentation_path}", destination_path)
+    git_add(
+      path: destination_path
+    )
   end
 
   private_lane :git_commit_shell do |options|
