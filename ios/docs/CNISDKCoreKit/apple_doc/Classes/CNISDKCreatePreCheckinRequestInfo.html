@@ -60,9 +60,15 @@
 		
 		<option value="//api/name/arriveTime">arriveTime</option>
 		
+		<option value="//api/name/bookedRoomType">bookedRoomType</option>
+		
 		<option value="//api/name/departureDate">departureDate</option>
 		
 		<option value="//api/name/requestedItems">requestedItems</option>
+		
+		<option value="//api/name/reservationNumber">reservationNumber</option>
+		
+		<option value="//api/name/travelPurpose">travelPurpose</option>
 		
 		<option value="//api/name/venueConichiID">venueConichiID</option>
 		
@@ -73,6 +79,8 @@
 	<optgroup label="Class Methods">
 		
 		<option value="//api/name/convertArriveTimeEnumToString:">+ convertArriveTimeEnumToString:</option>
+		
+		<option value="//api/name/convertTravelPurposeEnumToString:">+ convertTravelPurposeEnumToString:</option>
 		
 	</optgroup>
 	
@@ -334,6 +342,129 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/reservationNumber" title="reservationNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/reservationNumber">&nbsp;&nbsp;reservationNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Guest&rsquo;s reservation number (optional)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSString *reservationNumber</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKCreatePreCheckinRequestInfo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/bookedRoomType" title="bookedRoomType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bookedRoomType">&nbsp;&nbsp;bookedRoomType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Guest&rsquo;s booked room type (optional)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSString *bookedRoomType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKCreatePreCheckinRequestInfo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/travelPurpose" title="travelPurpose"></a>
+	<h3 class="method-title"><code><a href="#//api/name/travelPurpose">&nbsp;&nbsp;travelPurpose</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Guest&rsquo;s travel purpose</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CNISDKPreCheckinRequestTravelPurpose travelPurpose</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKCreatePreCheckinRequestInfo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/convertArriveTimeEnumToString:" title="convertArriveTimeEnumToString:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/convertArriveTimeEnumToString:">+&nbsp;convertArriveTimeEnumToString:</a></code>
 </h3>
@@ -391,6 +522,64 @@
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/convertTravelPurposeEnumToString:" title="convertTravelPurposeEnumToString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/convertTravelPurposeEnumToString:">+&nbsp;convertTravelPurposeEnumToString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts <a href="../Constants/CNISDKPreCheckinRequestTravelPurpose.html">CNISDKPreCheckinRequestTravelPurpose</a> enum value into NSString value</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)convertTravelPurposeEnumToString:(CNISDKPreCheckinRequestTravelPurpose)<em>travelPurpose</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>travelPurpose</code></th>
+						<td><p>enum travel purpose value</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>string travel purpose value</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKCreatePreCheckinRequestInfo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -406,7 +595,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 conichi. All rights reserved. Updated: 2016-11-01</p>
+						<p class="copyright">Copyright &copy; 2016 conichi. All rights reserved. Updated: 2016-11-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
