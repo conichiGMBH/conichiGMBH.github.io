@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>CNISDKDeliverableCountableItem Class Reference</title>
+	<title>CNISDKExternalSignUpRequestInfo Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -43,8 +43,6 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
 
 	
 	
@@ -56,19 +54,17 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/count">count</option>
+		<option value="//api/name/externalEmail">externalEmail</option>
 		
-		<option value="//api/name/deliverableItem">deliverableItem</option>
+		<option value="//api/name/externalID">externalID</option>
+		
+		<option value="//api/name/firstName">firstName</option>
+		
+		<option value="//api/name/lastName">lastName</option>
 		
 	</optgroup>
 	
 
-	
-	<optgroup label="Class Methods">
-		
-		<option value="//api/name/itemWithDeliverableItem:countOf:">+ itemWithDeliverableItem:countOf:</option>
-		
-	</optgroup>
 	
 
 	
@@ -85,7 +81,7 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">CNISDKDeliverableCountableItem Class Reference</h1>
+					<h1 class="title">CNISDKExternalSignUpRequestInfo Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
@@ -93,21 +89,16 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/CNISDKRequestInfo.html">CNISDKRequestInfo</a></td>
+</tr><tr>
 	<th>Declared in</th>
-	<td>CNISDKDeliverableCountableItem.h</td>
+	<td>CNISDKExternalSignUpRequestInfo.h</td>
 </tr>
 						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>CNISDKDeliverableCountableItem</code> defines entity that represents hotel item and number of times it was chosen</p>
-					</div>
-					
-					
 
 					
 					
@@ -120,8 +111,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/deliverableItem" title="deliverableItem"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deliverableItem">&nbsp;&nbsp;deliverableItem</a></code>
+	<a name="//api/name/externalID" title="externalID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/externalID">&nbsp;&nbsp;externalID</a></code>
 </h3>
 
 	<div class="method-info">
@@ -131,12 +122,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Associated deliverable item object</p>
+				<p>external identifier used to anonymize users authenticating from external source, this can be any kind of string</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) CNISDKDeliverableItem *deliverableItem</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *externalID</code></div>
 
 		    
 			
@@ -154,15 +145,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKDeliverableCountableItem.h</code></p>
+				<p><code class="declared-in-ref">CNISDKExternalSignUpRequestInfo.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/count" title="count"></a>
-	<h3 class="method-title"><code><a href="#//api/name/count">&nbsp;&nbsp;count</a></code>
+	<a name="//api/name/externalEmail" title="externalEmail"></a>
+	<h3 class="method-title"><code><a href="#//api/name/externalEmail">&nbsp;&nbsp;externalEmail</a></code>
 </h3>
 
 	<div class="method-info">
@@ -172,12 +163,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Count of deliverable items</p>
+				<p>external user e-mail, optional. If null, no e-mail will be passed to the server.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger count</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable, strong) NSString *externalEmail</code></div>
 
 		    
 			
@@ -195,15 +186,15 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKDeliverableCountableItem.h</code></p>
+				<p><code class="declared-in-ref">CNISDKExternalSignUpRequestInfo.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/itemWithDeliverableItem:countOf:" title="itemWithDeliverableItem:countOf:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/itemWithDeliverableItem:countOf:">+&nbsp;itemWithDeliverableItem:countOf:</a></code>
+	<a name="//api/name/firstName" title="firstName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstName">&nbsp;&nbsp;firstName</a></code>
 </h3>
 
 	<div class="method-info">
@@ -213,38 +204,16 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates deliverable item with underlying item and <a href="#//api/name/count">count</a> of this item</p>
+				<p>first name of user registering with this request info</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)itemWithDeliverableItem:(CNISDKDeliverableItem *)<em>item</em> countOf:(NSUInteger)<em>count</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *firstName</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>item</code></th>
-						<td><p>underlying item</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>count</code></th>
-						<td><p>number of times item was chosen</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p><a href="../Classes/CNISDKDeliverableItem.html">CNISDKDeliverableItem</a> instance</p>
-			</div>
 			
 
 			
@@ -258,7 +227,48 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKDeliverableCountableItem.h</code></p>
+				<p><code class="declared-in-ref">CNISDKExternalSignUpRequestInfo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastName" title="lastName"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastName">&nbsp;&nbsp;lastName</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>last name of user registering with this request info</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *lastName</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKExternalSignUpRequestInfo.h</code></p>
 			</div>
 			
 			
