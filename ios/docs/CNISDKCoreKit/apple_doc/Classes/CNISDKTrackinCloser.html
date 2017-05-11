@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>CNISDKTrackinCloser Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,29 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/closeUnassociatedTrackinsCompletion:">- closeUnassociatedTrackinsCompletion:</option>
+		
+		<option value="//api/name/initWithCurrentGuest:apiManager:">- initWithCurrentGuest:apiManager:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +79,182 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">CNISDKTrackinCloser Class Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>CNISDKTrackinCloser.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>CNISDKTrackinCloser</code> class contains the method that handles closing of current
+guest trackin if it doesnt belong to current beacon</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithCurrentGuest:apiManager:" title="initWithCurrentGuest:apiManager:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCurrentGuest:apiManager:">&ndash;&nbsp;initWithCurrentGuest:apiManager:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates trackin closer instance</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithCurrentGuest:(CNISDKGuest *)<em>guest</em> apiManager:(CNISDKAPIManager *)<em>apiManager</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>guest</code></th>
+						<td><p>current guest</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiManager</code></th>
+						<td><p>api manager to communicate with backend</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>new instance of CNISDKTrackinCloser</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKTrackinCloser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeUnassociatedTrackinsCompletion:" title="closeUnassociatedTrackinsCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeUnassociatedTrackinsCompletion:">&ndash;&nbsp;closeUnassociatedTrackinsCompletion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform indvidual task to close current guest trackin if it doesnt belong to current beacon</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)closeUnassociatedTrackinsCompletion:(nullable CNISDKIntegerErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>block with two parameters</li>
+<li>number of closed trackins</li>
+<li>error is occured
+block performs on the main thread</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKTrackinCloser.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-05-03</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

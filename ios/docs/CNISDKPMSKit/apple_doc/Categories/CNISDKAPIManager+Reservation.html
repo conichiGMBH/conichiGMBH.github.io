@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title></title>
+	<title>CNISDKAPIManager(Reservation) Category Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
 </head>
 <body class="appledoc">
 	<header>
@@ -43,9 +43,41 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/confirmReservationWithID:notifyAboutMobileCheckinOpen:completion:">- confirmReservationWithID:notifyAboutMobileCheckinOpen:completion:</option>
+		
+		<option value="//api/name/createReservationWithRequest:completion:">- createReservationWithRequest:completion:</option>
+		
+		<option value="//api/name/fetchReservationMasterBill:completion:">- fetchReservationMasterBill:completion:</option>
+		
+		<option value="//api/name/fetchReservationWithID:completion:">- fetchReservationWithID:completion:</option>
+		
+		<option value="//api/name/payForReservationWithRequest:completion:">- payForReservationWithRequest:completion:</option>
+		
+		<option value="//api/name/performMobileCheckinForReservationWithID:completion:">- performMobileCheckinForReservationWithID:completion:</option>
+		
+		<option value="//api/name/performMobileCheckoutForReservationWithID:completion:">- performMobileCheckoutForReservationWithID:completion:</option>
+		
+		<option value="//api/name/updateReservationMasterBillWithRequest:completion:">- updateReservationMasterBillWithRequest:completion:</option>
+		
+	</optgroup>
+	
 	
 </select>
 						</label>
@@ -59,22 +91,542 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title"></h1>
+					<h1 class="title">CNISDKAPIManager(Reservation) Category Reference</h1>
 
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>CNISDKAPIManager+Reservation.h</td>
+</tr>
+						</tbody></table></div>
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>CNISDKAPIManager+Reservation</code> is a category on <code>CNISDKAPIManager</code> that extends it&rsquo;s functionality with working with reservation methods</p>
+					</div>
+					
+					
 
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/createReservationWithRequest:completion:" title="createReservationWithRequest:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createReservationWithRequest:completion:">&ndash;&nbsp;createReservationWithRequest:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a reservation object on the backend with guest&rsquo;s reservation identifier and for specific venue id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)createReservationWithRequest:(CNISDKCreateReservationRequestInfo *)<em>requestInfo</em> completion:(nonnull CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requestInfo</code></th>
+						<td><p>create reservation request</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKReservation.html">CNISDKReservation</a> object if created
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performMobileCheckinForReservationWithID:completion:" title="performMobileCheckinForReservationWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performMobileCheckinForReservationWithID:completion:">&ndash;&nbsp;performMobileCheckinForReservationWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Assigns room and changes checkin status from pending to open.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)performMobileCheckinForReservationWithID:(NSString *)<em>reservationConichiID</em> completion:(CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reservationConichiID</code></th>
+						<td><p>reservation conichi id</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKReservation.html">CNISDKReservation</a> object if created
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/confirmReservationWithID:notifyAboutMobileCheckinOpen:completion:" title="confirmReservationWithID:notifyAboutMobileCheckinOpen:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/confirmReservationWithID:notifyAboutMobileCheckinOpen:completion:">&ndash;&nbsp;confirmReservationWithID:notifyAboutMobileCheckinOpen:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Confirms reservation with the given id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)confirmReservationWithID:(NSString *)<em>reservationConichiID</em> notifyAboutMobileCheckinOpen:(BOOL)<em>notifyAboutMobileCheckinOpen</em> completion:(CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reservationConichiID</code></th>
+						<td><p>confirming reservation id</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>notifyAboutMobileCheckinOpen</code></th>
+						<td><p>the flag whether the guest wants to be subscribed on the notification when mobile checkin is open</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKReservation.html">CNISDKReservation</a> object if created
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/payForReservationWithRequest:completion:" title="payForReservationWithRequest:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/payForReservationWithRequest:completion:">&ndash;&nbsp;payForReservationWithRequest:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sends the request to pay for the reservation with the given request info</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)payForReservationWithRequest:(CNISDKPayForReservationRequestInfo *)<em>requestInfo</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requestInfo</code></th>
+						<td><p>pay for reservation request info</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKPayForReservationResult.html">CNISDKPayForReservationResult</a> object if created
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchReservationWithID:completion:" title="fetchReservationWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchReservationWithID:completion:">&ndash;&nbsp;fetchReservationWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches the reservation object from the conichi backend with the given conichi id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchReservationWithID:(NSString *)<em>reservationID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reservationID</code></th>
+						<td><p>reservation&rsquo;s conichi id</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKReservation.html">CNISDKReservation</a> object if created
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchReservationMasterBill:completion:" title="fetchReservationMasterBill:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchReservationMasterBill:completion:">&ndash;&nbsp;fetchReservationMasterBill:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches reservation&rsquo;s master bill. It can contain information about purchased items from PMS and also custom items provided by user or
+conichi</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchReservationMasterBill:(NSString *)<em>reservationID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reservationID</code></th>
+						<td><p>conichiID of the associated reservation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKFolio.html">CNISDKFolio</a> if exist
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateReservationMasterBillWithRequest:completion:" title="updateReservationMasterBillWithRequest:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateReservationMasterBillWithRequest:completion:">&ndash;&nbsp;updateReservationMasterBillWithRequest:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Updates reservation&rsquo;s master bill</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateReservationMasterBillWithRequest:(CNISDKUpdateReservationMasterBillRequestInfo *)<em>requestInfo</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>requestInfo</code></th>
+						<td><p>request info with information to update master bill for the reservation</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. <a href="../Classes/CNISDKFolio.html">CNISDKFolio</a> if exist
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/performMobileCheckoutForReservationWithID:completion:" title="performMobileCheckoutForReservationWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/performMobileCheckoutForReservationWithID:completion:">&ndash;&nbsp;performMobileCheckoutForReservationWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Changes checkin status from open to closed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)performMobileCheckoutForReservationWithID:(NSString *)<em>reservationConichiID</em> completion:(CNISDKBooleanErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reservationConichiID</code></th>
+						<td><p>reservation conichi id</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion block with two optional parameters:
+1. Boolean flag if succeeded
+2. NSError if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Reservation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
 					
 
                     
+                    
+          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-05-10</p>
+						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-05-03</p>
 						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>
