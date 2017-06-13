@@ -203,15 +203,15 @@
 						<p>The <code>CNISDKAPIManager</code> class contains methods that handle general network requests,
 methods that handle requests for concrete entities are located in categories</p>
 
-<p><code>CNISDKAPIManager+CheckIn</code> is a category on CNISDKAPIManager that extends it&rsquo;s functionality with checkin related methods</p>
+<p><code>CNISDKAPIManager+Checkout</code> is a category in CNISDKAPIManager that extends it&rsquo;s functionality with methods related to checkout functional</p>
 
 <p><code>CNISDKAPIManager+Authentication</code> is a category on <code>CNISDKAPIManager</code> that extends it&rsquo;s functionality with authentication methods</p>
 
 <p><code>CNISDKAPIManager+Guest</code> is a category in CNISDKAPIManager that extends it&rsquo;s functionality with guest related methods</p>
 
-<p><code>CNISDKAPIManager+Venue</code> is a category on CNISDKAPIManager that extends it&rsquo;s functionality with venue related methods</p>
+<p><code>CNISDKAPIManager+CheckIn</code> is a category on CNISDKAPIManager that extends it&rsquo;s functionality with checkin related methods</p>
 
-<p><code>CNISDKAPIManager+Checkout</code> is a category in CNISDKAPIManager that extends it&rsquo;s functionality with methods related to checkout functional</p>
+<p><code>CNISDKAPIManager+Venue</code> is a category on CNISDKAPIManager that extends it&rsquo;s functionality with venue related methods</p>
 					</div>
 					
 					
@@ -390,13 +390,13 @@ If the backend API version is higher than the current it notifies SDK delegate v
 						</div>
 						
 
-						<a title="CheckIn Methods" name="task_CheckIn Methods"></a>
-						<h2 class="task-title">CheckIn Methods</h2>
+						<a title="Notifications Methods" name="task_Notifications Methods"></a>
+						<h2 class="task-title">Notifications Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/fetchCheckInsForGuest:completion:" title="fetchCheckInsForGuest:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchCheckInsForGuest:completion:">&ndash;&nbsp;fetchCheckInsForGuest:completion:</a></code>
+	<a name="//api/name/fetchGuestNotificationsUnreadCountWithCompletion:" title="fetchGuestNotificationsUnreadCountWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchGuestNotificationsUnreadCountWithCompletion:">&ndash;&nbsp;fetchGuestNotificationsUnreadCountWithCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -406,12 +406,12 @@ If the backend API version is higher than the current it notifies SDK delegate v
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetch all given guest&rsquo;s checkins</p>
+				<p>Fetch notifications unread count for current guest</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchCheckInsForGuest:(CNISDKGuest *)<em>guest</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchGuestNotificationsUnreadCountWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -420,15 +420,10 @@ If the backend API version is higher than the current it notifies SDK delegate v
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>guest</code></th>
-						<td><p>for which guest should fetch checkins</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
 						<td><ul>
 <li>callback block with two parameters</li>
-<li>Array of <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> objects</li>
+<li>Unread count as NSNumber</li>
 <li>NSError object if request failed</li>
 </ul>
 </td>
@@ -451,15 +446,15 @@ If the backend API version is higher than the current it notifies SDK delegate v
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/fetchDetailCheckInInformation:completion:" title="fetchDetailCheckInInformation:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchDetailCheckInInformation:completion:">&ndash;&nbsp;fetchDetailCheckInInformation:completion:</a></code>
+	<a name="//api/name/fetchGuestNotificationsWithCompletion:" title="fetchGuestNotificationsWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchGuestNotificationsWithCompletion:">&ndash;&nbsp;fetchGuestNotificationsWithCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -469,12 +464,12 @@ If the backend API version is higher than the current it notifies SDK delegate v
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetch detail checkin information for the given checkin object</p>
+				<p>Fetch notifications for current guest</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchDetailCheckInInformation:(CNISDKCheckin *)<em>checkin</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchGuestNotificationsWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -483,14 +478,286 @@ If the backend API version is higher than the current it notifies SDK delegate v
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>checkin</code></th>
-						<td><p>checkin object to be filled with detail information out</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Array of <a href="../Classes/CNISDKNotification.html">CNISDKNotification</a> objects</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/favouriteNotification:withConichiID:completion:" title="favouriteNotification:withConichiID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/favouriteNotification:withConichiID:completion:">&ndash;&nbsp;favouriteNotification:withConichiID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Star notification with given conichiID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)favouriteNotification:(BOOL)<em>isFavourite</em> withConichiID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isFavourite</code></th>
+						<td><ul>
+<li>should notification be starred</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>conichiID</code></th>
+						<td><ul>
+<li>selected preference conichiID</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Starred notification object</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteNotificationWithConichiID:completion:" title="deleteNotificationWithConichiID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteNotificationWithConichiID:completion:">&ndash;&nbsp;deleteNotificationWithConichiID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete notification with given conichiID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteNotificationWithConichiID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKBooleanErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>conichiID</code></th>
+						<td><ul>
+<li>selected preference conichiID</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Deleted notification object</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/markReadNotificationWithConichiID:completion:" title="markReadNotificationWithConichiID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/markReadNotificationWithConichiID:completion:">&ndash;&nbsp;markReadNotificationWithConichiID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Mark notification with given conichiID as read</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)markReadNotificationWithConichiID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>conichiID</code></th>
+						<td><ul>
+<li>selected preference conichiID</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Read notification object</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Checkout Methods" name="task_Checkout Methods"></a>
+						<h2 class="task-title">Checkout Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fetchDeliverableCategoriesForVenueID:completion:" title="fetchDeliverableCategoriesForVenueID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchDeliverableCategoriesForVenueID:completion:">&ndash;&nbsp;fetchDeliverableCategoriesForVenueID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches all deliverable categories with items inside for the given venue</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchDeliverableCategoriesForVenueID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>conichiID</code></th>
+						<td><p>venue&rsquo;s' conichiID</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
 						<td><p>callback block with two parameters
-1. <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object if succeeded
+1. Categories array
 2. NSError object if request failed</p></td>
 					</tr>
 				
@@ -511,15 +778,15 @@ If the backend API version is higher than the current it notifies SDK delegate v
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Checkout.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/addRating:toCurrentVenueCheckin:completion:" title="addRating:toCurrentVenueCheckin:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addRating:toCurrentVenueCheckin:completion:">&ndash;&nbsp;addRating:toCurrentVenueCheckin:completion:</a></code>
+	<a name="//api/name/createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:" title="createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:">&ndash;&nbsp;createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -529,80 +796,12 @@ If the backend API version is higher than the current it notifies SDK delegate v
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Add rating for the provided checkin. This method will update the given checkin object instead of creating a new one</p>
+				<p>Creates checkout request for the current guest and current open checkin. Open checkin presents is a required condition</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRating:(NSNumber *)<em>rating</em> toCurrentVenueCheckin:(CNISDKCheckin *)<em>checkin</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>rating</code></th>
-						<td><p>new checkin rating</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>checkin</code></th>
-						<td><p>checkin object to rate</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>up to date <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/addRating:toCheckinWithID:completion:" title="addRating:toCheckinWithID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/addRating:toCheckinWithID:completion:">&ndash;&nbsp;addRating:toCheckinWithID:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Add rating for the checkin with the given id</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)addRating:(NSNumber *)<em>rating</em> toCheckinWithID:(NSString *)<em>checkinID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)createCheckoutRequestWithDeliverableCountableItems:(nullable NSArray&lt;CNISDKDeliverableCountableItem*&gt; *)<em>items</em> selectedCreditCard:(NSString *)<em>creditCardID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -611,87 +810,19 @@ If the backend API version is higher than the current it notifies SDK delegate v
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>rating</code></th>
-						<td><p>new checkin rating</p></td>
+						<th scope="row" class="argument-name"><code>items</code></th>
+						<td><p>array of <a href="../Classes/CNISDKDeliverableCountableItem.html">CNISDKDeliverableCountableItem</a> objects</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>checkinID</code></th>
-						<td><p>checkin conichi id to rate</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>new <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/checkinGuestWithID:inVenueWithID:completion:" title="checkinGuestWithID:inVenueWithID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/checkinGuestWithID:inVenueWithID:completion:">&ndash;&nbsp;checkinGuestWithID:inVenueWithID:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Creates the check-in object on the conichi backend for the given guest in the given venue</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)checkinGuestWithID:(NSString *)<em>guestID</em> inVenueWithID:(NSString *)<em>venueID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>guestID</code></th>
-						<td><p>conichi ID of the guest to be checked in</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>venueID</code></th>
-						<td><p>conichi ID of the venue where the guest should be checked in</p></td>
+						<th scope="row" class="argument-name"><code>creditCardID</code></th>
+						<td><p>selected payment instrument id</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback with two parameters
-1. New <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object if open
+						<td><p>callback block with two parameters
+1. <a href="../Classes/CNISDKCheckoutRequest.html">CNISDKCheckoutRequest</a> object
 2. NSError object if request failed</p></td>
 					</tr>
 				
@@ -712,7 +843,7 @@ If the backend API version is higher than the current it notifies SDK delegate v
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Checkout.h</code></p>
 			</div>
 			
 			
@@ -2030,13 +2161,13 @@ Also removes this pre checkin from the given guest&rsquo;s pre checkins array</p
 						</div>
 						
 
-						<a title="Venue Methods" name="task_Venue Methods"></a>
-						<h2 class="task-title">Venue Methods</h2>
+						<a title="PreferenceCategories Methods" name="task_PreferenceCategories Methods"></a>
+						<h2 class="task-title">PreferenceCategories Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/fetchCardsForVenueID:withCompletion:" title="fetchCardsForVenueID:withCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchCardsForVenueID:withCompletion:">&ndash;&nbsp;fetchCardsForVenueID:withCompletion:</a></code>
+	<a name="//api/name/fetchPreferenceCategoriesWithRelationshipsForGuest:completion:" title="fetchPreferenceCategoriesWithRelationshipsForGuest:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchPreferenceCategoriesWithRelationshipsForGuest:completion:">&ndash;&nbsp;fetchPreferenceCategoriesWithRelationshipsForGuest:completion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2046,12 +2177,12 @@ Also removes this pre checkin from the given guest&rsquo;s pre checkins array</p
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetches an array of <a href="../Classes/CNISDKVenueCard.html">CNISDKVenueCard</a> objects from the backend</p>
+				<p>Fetch all Conichi&rsquo;s preference categories with nested categories and preferences and caches they in local file</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchCardsForVenueID:(NSString *)<em>conichiID</em> withCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchPreferenceCategoriesWithRelationshipsForGuest:(CNISDKGuest *)<em>guest</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -2060,15 +2191,21 @@ Also removes this pre checkin from the given guest&rsquo;s pre checkins array</p
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>conichiID</code></th>
-						<td><p>id of venue</p></td>
+						<th scope="row" class="argument-name"><code>guest</code></th>
+						<td><ul>
+<li>for which guest we are fetching categories and preferences</li>
+</ul>
+</td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with three parameters
-1. NSArray of <a href="../Classes/CNISDKVenueCard.html">CNISDKVenueCard</a> objects
-2. NSError object if request failed</p></td>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Array of <a href="../Classes/CNISDKPreferenceCategory.html">CNISDKPreferenceCategory</a> objects</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
 					</tr>
 				
 				</table>
@@ -2088,15 +2225,15 @@ Also removes this pre checkin from the given guest&rsquo;s pre checkins array</p
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+PreferenceCategories.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/fetchVenuesWithCompletion:" title="fetchVenuesWithCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchVenuesWithCompletion:">&ndash;&nbsp;fetchVenuesWithCompletion:</a></code>
+	<a name="//api/name/fetchPreferenceCategories:" title="fetchPreferenceCategories:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchPreferenceCategories:">&ndash;&nbsp;fetchPreferenceCategories:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2106,74 +2243,12 @@ Also removes this pre checkin from the given guest&rsquo;s pre checkins array</p
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetches an array of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects from the backend and store it in local cache
-The venue array depends on ip address location</p>
+				<p>Fetch all Conichi&rsquo;s preference categories without relationships</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchVenuesWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with three parameters
-1. NSArray of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects
-2. NSError object if request failed</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> Authorization isn&rsquo;t neccessary to make this request</p></div>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchVenuesWithPreCheckinAvailableWithCompletion:" title="fetchVenuesWithPreCheckinAvailableWithCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchVenuesWithPreCheckinAvailableWithCompletion:">&ndash;&nbsp;fetchVenuesWithPreCheckinAvailableWithCompletion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetches an array of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects that supports pre checkin
-The venue array depends on ip address location</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchVenuesWithPreCheckinAvailableWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchPreferenceCategories:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -2183,75 +2258,12 @@ The venue array depends on ip address location</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with three parameters
-1. NSArray of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects
-2. NSError object if request failed</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchVenuesNearLatitude:longitude:completion:" title="fetchVenuesNearLatitude:longitude:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchVenuesNearLatitude:longitude:completion:">&ndash;&nbsp;fetchVenuesNearLatitude:longitude:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetches an array of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects from the backend and store it in local cache
-The venue array depends on ip address location</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchVenuesNearLatitude:(CLLocationDegrees)<em>latitude</em> longitude:(CLLocationDegrees)<em>longitude</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>latitude</code></th>
-						<td><p>latitude of the center of venues region</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>longitude</code></th>
-						<td><p>longitude of the center of venues region</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with three parameters
-1. NSArray of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects
-2. NSError object if request failed</p></td>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Array of <a href="../Classes/CNISDKPreferenceCategory.html">CNISDKPreferenceCategory</a> objects</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
 					</tr>
 				
 				</table>
@@ -2265,7 +2277,7 @@ The venue array depends on ip address location</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> Authorization isn&rsquo;t neccessary to make this request</p></div>
+				<div class="note"><p><strong>Note:</strong> It doesn&rsquo;t save them locally</p></div>
 			</div>
 			
 
@@ -2276,15 +2288,23 @@ The venue array depends on ip address location</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+PreferenceCategories.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchVenueWithID:completion:" title="fetchVenueWithID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchVenueWithID:completion:">&ndash;&nbsp;fetchVenueWithID:completion:</a></code>
+</div>
+						</div>
+						
+
+						<a title="CheckIn Methods" name="task_CheckIn Methods"></a>
+						<h2 class="task-title">CheckIn Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fetchCheckInsForGuest:completion:" title="fetchCheckInsForGuest:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchCheckInsForGuest:completion:">&ndash;&nbsp;fetchCheckInsForGuest:completion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2294,28 +2314,292 @@ The venue array depends on ip address location</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetches an up to date venue detail information</p>
+				<p>Fetch all given guest&rsquo;s checkins</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchVenueWithID:(NSString *)<em>venueID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchCheckInsForGuest:(CNISDKGuest *)<em>guest</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>guest</code></th>
+						<td><p>for which guest should fetch checkins</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>Array of <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> objects</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchDetailCheckInInformation:completion:" title="fetchDetailCheckInInformation:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchDetailCheckInInformation:completion:">&ndash;&nbsp;fetchDetailCheckInInformation:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetch detail checkin information for the given checkin object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchDetailCheckInInformation:(CNISDKCheckin *)<em>checkin</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkin</code></th>
+						<td><p>checkin object to be filled with detail information out</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>callback block with two parameters
+1. <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object if succeeded
+2. NSError object if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addRating:toCurrentVenueCheckin:completion:" title="addRating:toCurrentVenueCheckin:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addRating:toCurrentVenueCheckin:completion:">&ndash;&nbsp;addRating:toCurrentVenueCheckin:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add rating for the provided checkin. This method will update the given checkin object instead of creating a new one</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addRating:(NSNumber *)<em>rating</em> toCurrentVenueCheckin:(CNISDKCheckin *)<em>checkin</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rating</code></th>
+						<td><p>new checkin rating</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkin</code></th>
+						<td><p>checkin object to rate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>up to date <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addRating:toCheckinWithID:completion:" title="addRating:toCheckinWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addRating:toCheckinWithID:completion:">&ndash;&nbsp;addRating:toCheckinWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add rating for the checkin with the given id</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addRating:(NSNumber *)<em>rating</em> toCheckinWithID:(NSString *)<em>checkinID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rating</code></th>
+						<td><p>new checkin rating</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>checkinID</code></th>
+						<td><p>checkin conichi id to rate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><ul>
+<li>callback block with two parameters</li>
+<li>new <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object</li>
+<li>NSError object if request failed</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/checkinGuestWithID:inVenueWithID:completion:" title="checkinGuestWithID:inVenueWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/checkinGuestWithID:inVenueWithID:completion:">&ndash;&nbsp;checkinGuestWithID:inVenueWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates the check-in object on the conichi backend for the given guest in the given venue</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)checkinGuestWithID:(NSString *)<em>guestID</em> inVenueWithID:(NSString *)<em>venueID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>guestID</code></th>
+						<td><p>conichi ID of the guest to be checked in</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>venueID</code></th>
-						<td><p>conichiID of the fetched object</p></td>
+						<td><p>conichi ID of the venue where the guest should be checked in</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with three parameters
-1. <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> object
+						<td><p>callback with two parameters
+1. New <a href="../Classes/CNISDKCheckin.html">CNISDKCheckin</a> object if open
 2. NSError object if request failed</p></td>
 					</tr>
 				
@@ -2336,7 +2620,7 @@ The venue array depends on ip address location</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+CheckIn.h</code></p>
 			</div>
 			
 			
@@ -2897,13 +3181,13 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 						</div>
 						
 
-						<a title="Checkout Methods" name="task_Checkout Methods"></a>
-						<h2 class="task-title">Checkout Methods</h2>
+						<a title="Venue Methods" name="task_Venue Methods"></a>
+						<h2 class="task-title">Venue Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/fetchDeliverableCategoriesForVenueID:completion:" title="fetchDeliverableCategoriesForVenueID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchDeliverableCategoriesForVenueID:completion:">&ndash;&nbsp;fetchDeliverableCategoriesForVenueID:completion:</a></code>
+	<a name="//api/name/fetchCardsForVenueID:withCompletion:" title="fetchCardsForVenueID:withCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchCardsForVenueID:withCompletion:">&ndash;&nbsp;fetchCardsForVenueID:withCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2913,12 +3197,12 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Fetches all deliverable categories with items inside for the given venue</p>
+				<p>Fetches an array of <a href="../Classes/CNISDKVenueCard.html">CNISDKVenueCard</a> objects from the backend</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)fetchDeliverableCategoriesForVenueID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchCardsForVenueID:(NSString *)<em>conichiID</em> withCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -2928,13 +3212,13 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>conichiID</code></th>
-						<td><p>venue&rsquo;s' conichiID</p></td>
+						<td><p>id of venue</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with two parameters
-1. Categories array
+						<td><p>callback block with three parameters
+1. NSArray of <a href="../Classes/CNISDKVenueCard.html">CNISDKVenueCard</a> objects
 2. NSError object if request failed</p></td>
 					</tr>
 				
@@ -2955,15 +3239,15 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Checkout.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:" title="createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:">&ndash;&nbsp;createCheckoutRequestWithDeliverableCountableItems:selectedCreditCard:completion:</a></code>
+	<a name="//api/name/fetchVenuesWithCompletion:" title="fetchVenuesWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchVenuesWithCompletion:">&ndash;&nbsp;fetchVenuesWithCompletion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -2973,12 +3257,13 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Creates checkout request for the current guest and current open checkin. Open checkin presents is a required condition</p>
+				<p>Fetches an array of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects from the backend and store it in local cache
+The venue array depends on ip address location</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)createCheckoutRequestWithDeliverableCountableItems:(nullable NSArray&lt;CNISDKDeliverableCountableItem*&gt; *)<em>items</em> selectedCreditCard:(NSString *)<em>creditCardID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)fetchVenuesWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
 
 		    
 			
@@ -2987,482 +3272,10 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>items</code></th>
-						<td><p>array of <a href="../Classes/CNISDKDeliverableCountableItem.html">CNISDKDeliverableCountableItem</a> objects</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>creditCardID</code></th>
-						<td><p>selected payment instrument id</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>callback block with two parameters
-1. <a href="../Classes/CNISDKCheckoutRequest.html">CNISDKCheckoutRequest</a> object
+						<td><p>callback block with three parameters
+1. NSArray of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects
 2. NSError object if request failed</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Checkout.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Notifications Methods" name="task_Notifications Methods"></a>
-						<h2 class="task-title">Notifications Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/fetchGuestNotificationsUnreadCountWithCompletion:" title="fetchGuestNotificationsUnreadCountWithCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchGuestNotificationsUnreadCountWithCompletion:">&ndash;&nbsp;fetchGuestNotificationsUnreadCountWithCompletion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch notifications unread count for current guest</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchGuestNotificationsUnreadCountWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Unread count as NSNumber</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchGuestNotificationsWithCompletion:" title="fetchGuestNotificationsWithCompletion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchGuestNotificationsWithCompletion:">&ndash;&nbsp;fetchGuestNotificationsWithCompletion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch notifications for current guest</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchGuestNotificationsWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Array of <a href="../Classes/CNISDKNotification.html">CNISDKNotification</a> objects</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/favouriteNotification:withConichiID:completion:" title="favouriteNotification:withConichiID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/favouriteNotification:withConichiID:completion:">&ndash;&nbsp;favouriteNotification:withConichiID:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Star notification with given conichiID</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)favouriteNotification:(BOOL)<em>isFavourite</em> withConichiID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>isFavourite</code></th>
-						<td><ul>
-<li>should notification be starred</li>
-</ul>
-</td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>conichiID</code></th>
-						<td><ul>
-<li>selected preference conichiID</li>
-</ul>
-</td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Starred notification object</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/deleteNotificationWithConichiID:completion:" title="deleteNotificationWithConichiID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/deleteNotificationWithConichiID:completion:">&ndash;&nbsp;deleteNotificationWithConichiID:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Delete notification with given conichiID</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)deleteNotificationWithConichiID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKBooleanErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>conichiID</code></th>
-						<td><ul>
-<li>selected preference conichiID</li>
-</ul>
-</td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Deleted notification object</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/markReadNotificationWithConichiID:completion:" title="markReadNotificationWithConichiID:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/markReadNotificationWithConichiID:completion:">&ndash;&nbsp;markReadNotificationWithConichiID:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Mark notification with given conichiID as read</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)markReadNotificationWithConichiID:(NSString *)<em>conichiID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>conichiID</code></th>
-						<td><ul>
-<li>selected preference conichiID</li>
-</ul>
-</td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Read notification object</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+Notifications.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="PreferenceCategories Methods" name="task_PreferenceCategories Methods"></a>
-						<h2 class="task-title">PreferenceCategories Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/fetchPreferenceCategoriesWithRelationshipsForGuest:completion:" title="fetchPreferenceCategoriesWithRelationshipsForGuest:completion:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchPreferenceCategoriesWithRelationshipsForGuest:completion:">&ndash;&nbsp;fetchPreferenceCategoriesWithRelationshipsForGuest:completion:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch all Conichi&rsquo;s preference categories with nested categories and preferences and caches they in local file</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchPreferenceCategoriesWithRelationshipsForGuest:(CNISDKGuest *)<em>guest</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>guest</code></th>
-						<td><ul>
-<li>for which guest we are fetching categories and preferences</li>
-</ul>
-</td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Array of <a href="../Classes/CNISDKPreferenceCategory.html">CNISDKPreferenceCategory</a> objects</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+PreferenceCategories.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchPreferenceCategories:" title="fetchPreferenceCategories:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchPreferenceCategories:">&ndash;&nbsp;fetchPreferenceCategories:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch all Conichi&rsquo;s preference categories without relationships</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchPreferenceCategories:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><ul>
-<li>callback block with two parameters</li>
-<li>Array of <a href="../Classes/CNISDKPreferenceCategory.html">CNISDKPreferenceCategory</a> objects</li>
-<li>NSError object if request failed</li>
-</ul>
-</td>
 					</tr>
 				
 				</table>
@@ -3476,7 +3289,7 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<div class="note"><p><strong>Note:</strong> It doesn&rsquo;t save them locally</p></div>
+				<div class="note"><p><strong>Note:</strong> Authorization isn&rsquo;t neccessary to make this request</p></div>
 			</div>
 			
 
@@ -3487,7 +3300,194 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKAPIManager+PreferenceCategories.h</code></p>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchVenuesWithPreCheckinAvailableWithCompletion:" title="fetchVenuesWithPreCheckinAvailableWithCompletion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchVenuesWithPreCheckinAvailableWithCompletion:">&ndash;&nbsp;fetchVenuesWithPreCheckinAvailableWithCompletion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches an array of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects that supports pre checkin
+The venue array depends on ip address location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchVenuesWithPreCheckinAvailableWithCompletion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>callback block with three parameters
+1. NSArray of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects
+2. NSError object if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchVenuesNearLatitude:longitude:completion:" title="fetchVenuesNearLatitude:longitude:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchVenuesNearLatitude:longitude:completion:">&ndash;&nbsp;fetchVenuesNearLatitude:longitude:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches an array of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects from the backend and store it in local cache
+The venue array depends on ip address location</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchVenuesNearLatitude:(CLLocationDegrees)<em>latitude</em> longitude:(CLLocationDegrees)<em>longitude</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>latitude</code></th>
+						<td><p>latitude of the center of venues region</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>longitude</code></th>
+						<td><p>longitude of the center of venues region</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>callback block with three parameters
+1. NSArray of <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> objects
+2. NSError object if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Authorization isn&rsquo;t neccessary to make this request</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fetchVenueWithID:completion:" title="fetchVenueWithID:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fetchVenueWithID:completion:">&ndash;&nbsp;fetchVenueWithID:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Fetches an up to date venue detail information</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)fetchVenueWithID:(NSString *)<em>venueID</em> completion:(nullable CNISDKIDErrorBlock)<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>venueID</code></th>
+						<td><p>conichiID of the fetched object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>callback block with three parameters
+1. <a href="../Classes/CNISDKVenue.html">CNISDKVenue</a> object
+2. NSError object if request failed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">CNISDKAPIManager+Venue.h</code></p>
 			</div>
 			
 			
@@ -3508,7 +3508,7 @@ kCNISDKAPIManagerPreferenceCategoryIDKey and kCNISDKAPIManagerPreferenceNameKey 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-05-23</p>
+						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-06-06</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
