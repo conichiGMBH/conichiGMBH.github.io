@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>CNISDKPermissionsManager Class Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -43,35 +43,9 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
-	<option value="overview">Overview</option>
-	
-
-	
-	
-	<option value="tasks">Tasks</option>
-	
-	
-
-	
-	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/askBackgroundLocationWithResponse:">- askBackgroundLocationWithResponse:</option>
-		
-		<option value="//api/name/askBluetoothWithResponse:">- askBluetoothWithResponse:</option>
-		
-		<option value="//api/name/askLocalNotificationsWithResponse:">- askLocalNotificationsWithResponse:</option>
-		
-		<option value="//api/name/init">- init</option>
-		
-		<option value="//api/name/initWithLocationManager:centralManager:application:">- initWithLocationManager:centralManager:application:</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -85,339 +59,22 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">CNISDKPermissionsManager Class Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Inherits from</th>
-	<td>NSObject</td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>CNISDKPermissionsManager.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The <code>CNISDKPermissionsManager</code> class contains methods that handle asking for iOS permissions
-for bluetooth, background location and notifications.
-CNISDKPermissionsManager is deprecated, use <a href="../Classes/CNISDKLocationPermissionManager.html">CNISDKLocationPermissionManager</a>, <a href="../Classes/CNISDKBluetoothPermissionManager.html">CNISDKBluetoothPermissionManager</a> and <a href="../Classes/CNISDKRemoteNotificationsPermissionManager.html">CNISDKRemoteNotificationsPermissionManager</a> instead.</p>
-					</div>
-					
-					
 
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Convenience initializer that creates permissions manager with default system managers</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>new permission manager instance</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionsManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithLocationManager:centralManager:application:" title="initWithLocationManager:centralManager:application:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithLocationManager:centralManager:application:">&ndash;&nbsp;initWithLocationManager:centralManager:application:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Designated initializer to create permission manager instance</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithLocationManager:(CLLocationManager *)<em>locationManager</em> centralManager:(CBCentralManager *)<em>centralManager</em> application:(CNISDKApplication *)<em>application</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>locationManager</code></th>
-						<td><p>system location manager to track background location permissions</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>centralManager</code></th>
-						<td><p>system central manager to track bluetooth status</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>application</code></th>
-						<td><p>application to track notifications permissions</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>new permission manager instance</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionsManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/askBluetoothWithResponse:" title="askBluetoothWithResponse:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/askBluetoothWithResponse:">&ndash;&nbsp;askBluetoothWithResponse:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Ask bluetooth permissions and return response in block</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)askBluetoothWithResponse:(nullable void ( ^ ) ( CBManagerState state , BOOL success ))<em>response</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>response</code></th>
-						<td><p>callback block with two parameters
-1. CBCentralManagerState
-2. Success flag - whether request succeeded or not</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionsManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/askLocalNotificationsWithResponse:" title="askLocalNotificationsWithResponse:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/askLocalNotificationsWithResponse:">&ndash;&nbsp;askLocalNotificationsWithResponse:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Ask notifications permissions and return response in block</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)askLocalNotificationsWithResponse:(nullable void ( ^ ) ( BOOL success ))<em>response</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>response</code></th>
-						<td><p>callback block with one parameter
-1. Success flag - whether request succeeded or not</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionsManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/askBackgroundLocationWithResponse:" title="askBackgroundLocationWithResponse:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/askBackgroundLocationWithResponse:">&ndash;&nbsp;askBackgroundLocationWithResponse:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Ask background location permission and return response in block</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)askBackgroundLocationWithResponse:(nullable void ( ^ ) ( CLAuthorizationStatus status , BOOL success ))<em>response</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>response</code></th>
-						<td><p>callback block with two parameters
-1. CLAuthorizationStatus
-2. Success flag - whether request succeeded or not</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionsManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
 					
 
                     
-                    
-          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-08-09</p>
+						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-08-16</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>

@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>CNISDKPermissionManager Protocol Reference</title>
+	<title></title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+	
 </head>
 <body class="appledoc">
 	<header>
@@ -45,39 +45,7 @@
 	
 
 	
-	
-	<option value="tasks">Tasks</option>
-	
-	
 
-	
-	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/permissionChangedCallbackBlock">permissionChangedCallbackBlock</option>
-		
-		<option value="//api/name/responseBlock">responseBlock</option>
-		
-		<option value="//api/name/sdkDelegate">sdkDelegate</option>
-		
-	</optgroup>
-	
-
-	
-
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/askAndListenForPermissionChangesWithCallback:">- askAndListenForPermissionChangesWithCallback:</option>
-		
-		<option value="//api/name/askForPermissionWithResult:">- askForPermissionWithResult:</option>
-		
-		<option value="//api/name/isPermissionAllowed">- isPermissionAllowed</option>
-		
-		<option value="//api/name/stopListening">- stopListening</option>
-		
-	</optgroup>
-	
 	
 </select>
 						</label>
@@ -91,371 +59,22 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">CNISDKPermissionManager Protocol Reference</h1>
+					<h1 class="title"></h1>
 
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<th>Conforms to</th>
-	<td>NSObject</td>
-</tr><tr>
-	<th>Declared in</th>
-	<td>CNISDKPermissionManager.h</td>
-</tr>
-						</tbody></table></div>
 					
 
                     
 
 					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						
-
-						
-						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/sdkDelegate" title="sdkDelegate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/sdkDelegate">&nbsp;&nbsp;sdkDelegate</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p><a href="../Classes/CNISDK.html">CNISDK</a> instance to update it&rsquo;s delegate</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, nullable) id&lt;CNISDKDelegate&gt; sdkDelegate</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/responseBlock" title="responseBlock"></a>
-	<h3 class="method-title"><code><a href="#//api/name/responseBlock">&nbsp;&nbsp;responseBlock</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The response block that&rsquo;s executed 1 time per <a href="#//api/name/askForPermissionWithResult:">askForPermissionWithResult:</a> call</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) CNISDKPermissionCallbackBlock responseBlock</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/permissionChangedCallbackBlock" title="permissionChangedCallbackBlock"></a>
-	<h3 class="method-title"><code><a href="#//api/name/permissionChangedCallbackBlock">&nbsp;&nbsp;permissionChangedCallbackBlock</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The permission changed call back block that&rsquo;s executed whenever the permission is changed</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, copy) CNISDKPermissionCallbackBlock permissionChangedCallbackBlock</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/isPermissionAllowed" title="isPermissionAllowed"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isPermissionAllowed">&ndash;&nbsp;isPermissionAllowed</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Checks whether permission is allowed or not</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)isPermissionAllowed</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>YES if permission is allowed, NO if permission is not allowed</p>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/askForPermissionWithResult:" title="askForPermissionWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/askForPermissionWithResult:">&ndash;&nbsp;askForPermissionWithResult:</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Asks for permission and executes the response block one time on main thread</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)askForPermissionWithResult:(CNISDKPermissionCallbackBlock)<em>result</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>callback block with two parameters
-1. Permission state
-2. Success flag - whether giving permission is succeeded or not</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/askAndListenForPermissionChangesWithCallback:" title="askAndListenForPermissionChangesWithCallback:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/askAndListenForPermissionChangesWithCallback:">&ndash;&nbsp;askAndListenForPermissionChangesWithCallback:</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Asks for permission and executes the callback block on main thread whenever the permission is changed</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)askAndListenForPermissionChangesWithCallback:(CNISDKPermissionCallbackBlock)<em>permissionChangedCallback</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>permissionChangedCallback</code></th>
-						<td><p>callback block with two parameters
-1. Permission state
-2. Success flag - whether giving permission is</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/stopListening" title="stopListening"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopListening">&ndash;&nbsp;stopListening</a></code>
-<span class="task-item-suffix">required method</span></h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Removes the permission changed callback, so that the listenner callback block won&rsquo;t be fired again if permission is changed</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)stopListening</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">CNISDKPermissionManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-					</div>
-					
-					
 
                     
-                    
-          
 				</main>
 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-08-09</p>
+						<p class="copyright">Copyright &copy; 2017 conichi. All rights reserved. Updated: 2017-08-16</p>
 						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
 						
 					</div>
 				</footer>
