@@ -68,11 +68,11 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">CNISDKCreditCardProvider</h3>
+                    <h3 class="subsubtitle method-title">CNISDKGeoFenceTrackinStatus</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Credit card provider</p>
+                        <p>Geofence trackin status</p>
 					</div>
 					
 					
@@ -80,11 +80,13 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, CNISDKCreditCardProvider ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, CNISDKGeoFenceTrackinStatus ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">CNISDKCreditCardProviderPayleven</a>,<br>
+                            &nbsp;&nbsp; <a href="">CNISDKGeoFenceTrackinStatusUnknown</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">CNISDKCreditCardProviderSumUp</a>,<br>
+                            &nbsp;&nbsp; <a href="">CNISDKGeoFenceTrackinStatusOpen</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">CNISDKGeoFenceTrackinStatusClosed</a>,<br>
                             
                             };</code>
                     
@@ -94,11 +96,14 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="CNISDKCreditCardProviderPayleven"></a><code>CNISDKCreditCardProviderPayleven</code></dt>
+                            <dt><a name="" title="CNISDKGeoFenceTrackinStatusUnknown"></a><code>CNISDKGeoFenceTrackinStatusUnknown</code></dt>
 <dd>
 
 
-<p>Credit card is hosted in Payleven service</p>
+<ul>
+<li>GeoFence trackin is currently unknown</li>
+</ul>
+
 
 
 
@@ -106,16 +111,16 @@
 
     
 	<p>
-		 <code class="declared-in-ref">CNISDKCreditCard.h</code>.
+		 <code class="declared-in-ref">CNISDKGeoFenceTrackin.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="CNISDKCreditCardProviderSumUp"></a><code>CNISDKCreditCardProviderSumUp</code></dt>
+                            <dt><a name="" title="CNISDKGeoFenceTrackinStatusOpen"></a><code>CNISDKGeoFenceTrackinStatusOpen</code></dt>
 <dd>
 
 
-<p>Credit card is hosted in SumUp service</p>
+<p>GeoFence trackin is open</p>
 
 
 
@@ -123,7 +128,24 @@
 
     
 	<p>
-		 <code class="declared-in-ref">CNISDKCreditCard.h</code>.
+		 <code class="declared-in-ref">CNISDKGeoFenceTrackin.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CNISDKGeoFenceTrackinStatusClosed"></a><code>CNISDKGeoFenceTrackinStatusClosed</code></dt>
+<dd>
+
+
+<p>GeoFence trackin is closed</p>
+
+
+
+
+
+    
+	<p>
+		 <code class="declared-in-ref">CNISDKGeoFenceTrackin.h</code>.
 	</p>
 	
 </dd>
@@ -140,7 +162,7 @@
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle"></h4>
-                        <p><code class="declared-in-ref">CNISDKCreditCard.h</code></p>
+                        <p><code class="declared-in-ref">CNISDKGeoFenceTrackin.h</code></p>
                     </div>
                     
                     
