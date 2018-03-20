@@ -1,4 +1,2 @@
-com.conichi.sdk.geofence
-com.conichi.sdk.geofence.exception
-com.conichi.sdk.geofence.internal
-com.conichi.sdk.geofence.model
+com.conichi.logger
+com.conichi.logger.snitch
