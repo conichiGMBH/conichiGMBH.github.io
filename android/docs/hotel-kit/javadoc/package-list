@@ -1,0 +1,10 @@
+com.conichi.sdk.hotelkit
+com.conichi.sdk.hotelkit.api
+com.conichi.sdk.hotelkit.api.mapper
+com.conichi.sdk.hotelkit.model
+com.conichi.sdk.hotelkit.model.pms
+com.conichi.sdk.hotelkit.model.preferences
+com.conichi.sdk.hotelkit.preferences
+com.conichi.sdk.hotelkit.preferences.internal
+com.conichi.sdk.hotelkit.providers
+com.conichi.sdk.hotelkit.providers.internal
