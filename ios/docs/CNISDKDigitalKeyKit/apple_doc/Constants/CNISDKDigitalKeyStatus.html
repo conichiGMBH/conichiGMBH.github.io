@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">CNISDKCoreKit </a>
+				<a href="../index.html">CNISDKDigitalKeyKit </a>
 			</h1>
 
 			<p id="developer-home">
@@ -68,25 +68,21 @@
 					
 
                     
-                    <h3 class="subsubtitle method-title">CNISDKDeliverableCategoryUseCase</h3>
+                    <h3 class="subsubtitle method-title">CNISDKDigitalKeyStatus</h3>
                     
-					
-					<div class="section section-overview">
-                        <p>Deliverable category use cases (specified the guest action for that category is available)</p>
-					</div>
-					
-					
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(NSInteger, CNISDKDeliverableCategoryUseCase ) {<br>
+                        <code>typedef NS_ENUM(NSInteger, CNISDKDigitalKeyStatus ) {<br>
                             
-                            &nbsp;&nbsp; <a href="">CNISDKDeliverableCategoryUseCaseUnknown</a>,<br>
+                            &nbsp;&nbsp; <a href="">CNISDKDigitalKeyStatusAlive</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">CNISDKDeliverableCategoryUseCasePreCheckin</a>,<br>
+                            &nbsp;&nbsp; <a href="">CNISDKDigitalKeyStatusUpdating</a>,<br>
                             
-                            &nbsp;&nbsp; <a href="">CNISDKDeliverableCategoryUseCaseCheckout</a>,<br>
+                            &nbsp;&nbsp; <a href="">CNISDKDigitalKeyStatusRevoking</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">CNISDKDigitalKeyStatusIssuing</a>,<br>
                             
                             };</code>
                     
@@ -96,53 +92,42 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="CNISDKDeliverableCategoryUseCaseUnknown"></a><code>CNISDKDeliverableCategoryUseCaseUnknown</code></dt>
+                            <dt><a name="" title="CNISDKDigitalKeyStatusAlive"></a><code>CNISDKDigitalKeyStatusAlive</code></dt>
 <dd>
-
-
-<p>Unknown category use case</p>
-
-
-
-
 
     
 	<p>
-		 <code class="declared-in-ref">CNISDKEnums.h</code>.
+		 <code class="declared-in-ref">CNISDKDigitalKeyInformation.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="CNISDKDeliverableCategoryUseCasePreCheckin"></a><code>CNISDKDeliverableCategoryUseCasePreCheckin</code></dt>
+                            <dt><a name="" title="CNISDKDigitalKeyStatusUpdating"></a><code>CNISDKDigitalKeyStatusUpdating</code></dt>
 <dd>
-
-
-<p>Category is available only during the pre checkin</p>
-
-
-
-
 
     
 	<p>
-		 <code class="declared-in-ref">CNISDKEnums.h</code>.
+		 <code class="declared-in-ref">CNISDKDigitalKeyInformation.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="CNISDKDeliverableCategoryUseCaseCheckout"></a><code>CNISDKDeliverableCategoryUseCaseCheckout</code></dt>
+                            <dt><a name="" title="CNISDKDigitalKeyStatusRevoking"></a><code>CNISDKDigitalKeyStatusRevoking</code></dt>
 <dd>
-
-
-<p>Category is available only during the checkout</p>
-
-
-
-
 
     
 	<p>
-		 <code class="declared-in-ref">CNISDKEnums.h</code>.
+		 <code class="declared-in-ref">CNISDKDigitalKeyInformation.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="CNISDKDigitalKeyStatusIssuing"></a><code>CNISDKDigitalKeyStatusIssuing</code></dt>
+<dd>
+
+    
+	<p>
+		 <code class="declared-in-ref">CNISDKDigitalKeyInformation.h</code>.
 	</p>
 	
 </dd>
@@ -151,17 +136,6 @@
                     </div>
                     
 
-                    
-                    
-
-                    
-
-                    
-                    <div class="method-subsection declared-in-section">
-                        <h4 class="method-subtitle"></h4>
-                        <p><code class="declared-in-ref">CNISDKEnums.h</code></p>
-                    </div>
-                    
                     
                     
 				</main>
